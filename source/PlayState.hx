@@ -277,21 +277,16 @@ class PlayState extends MusicBeatState
 		Conductor.mapBPMChanges(SONG);
 		Conductor.changeBPM(SONG.bpm);
 	
-			//if(dialogueList.contains(SONG.song.toLowerCase())){
-			if(FileSystem.exists("assets/data/" + SONG.song.toLowerCase() + "/dialogue.txt")){
-				dialogue = CoolUtil.coolTextFile("assets/data/" + SONG.song.toLowerCase() + "/dialogue.txt");
-				usesDialogue = true;
-			}
+		if(dialogueList.contains(SONG.song.toLowerCase())){
+			dialogue = CoolUtil.coolTextFile("assets/data/" + SONG.song.toLowerCase() + "/dialogue.txt");
+			usesDialogue = true;
+		}
 
-			//if(dialogueEndList.contains(SONG.song.toLowerCase())){
-			if(FileSystem.exists("assets/data/" + SONG.song.toLowerCase() + "/dialogueEnd.txt")){//why use lists when u can just check : P
-				dialogueEnd = CoolUtil.coolTextFile("assets/data/" + SONG.song.toLowerCase() + "/dialogueEnd.txt");
-				usesEndDialogue = true;
-			}
-			
-			
-			if(FileSystem.exists("assets/data/" + SONG.song.toLowerCase() + "/dialogueEnd.txt"))
-		
+		if(dialogueEndList.contains(SONG.song.toLowerCase())){
+			dialogueEnd = CoolUtil.coolTextFile("assets/data/" + SONG.song.toLowerCase() + "/dialogueEnd.txt");
+			usesEndDialogue = true;
+		}
+
 
 		#if desktop
 		// Making difficulty text for Discord Rich Presence.
